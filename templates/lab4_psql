@@ -1,0 +1,34 @@
+# get & start psql on windows subsytem
+
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+sudo su postgres
+service postgresql start
+psql
+
+
+# create database
+
+CREATE DATABASE service_db;
+\c service_db
+CREATE SCHEMA service;
+CREATE TABLE service.users (id SERIAL NOT NULL, full_name VARCHAR NOT NULL, login VARCHAR NOT NULL, password VARCHAR NOT NULL);
+
+
+# fill table
+
+INSERT INTO service.users (full_name, login, password) VALUES ('Ritusichka Korchanova','Ritusichka', 'admin');
+INSERT INTO service.users (full_name, login, password) VALUES ('Donald Trump','DonalD', 'Cdfyguhij');
+INSERT INTO service.users (full_name, login, password) VALUES ('Kto To','Yaaaaa', 'fguhiojk');
+INSERT INTO service.users (full_name, login, password) VALUES ('Gnom Markovich','Gnom', 'drtfyguhijo');
+INSERT INTO service.users (full_name, login, password) VALUES ('Prosto Vasya','Yasha', 'tfyGUHGGFHJH');
+INSERT INTO service.users (full_name, login, password) VALUES ('Krot Max','Krax', 'rtyiuoi');
+INSERT INTO service.users (full_name, login, password) VALUES ('Garfild Prodd','kot', 'tyfguyioj');
+INSERT INTO service.users (full_name, login, password) VALUES ('Klark Kent','Superman', 'fghjkid');
+INSERT INTO service.users (full_name, login, password) VALUES ('Ruba Buba','Tusdbc', 'tyiuop');
+INSERT INTO service.users (full_name, login, password) VALUES ('Salat Cesar','Rum', 'RYTUYIUOHGd4567');
+
+
+# check table
+
+SELECT * FROM service.users;
